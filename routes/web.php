@@ -30,3 +30,7 @@ Route::put('/cindex/{course}/update', [CourseController::class, 'update'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/admin_dashboard', 'App\Http\Controllers\Admin\DashboardController@index')->middleware('role:admin');
+Route::get('/student_dashboard', 'App\Http\Controllers\Student\DashboardController@index')->middleware('role:student');
