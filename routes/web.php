@@ -26,3 +26,7 @@ Route::post('/cindex', [CourseController::class, 'store'])->name('course.store')
 Route::get('/cview', [CourseController::class, 'view'])->name('course.view');
 Route::get('/cindex/{course}/edit', [CourseController::class, 'edit'])->name('course.edit');
 Route::put('/cindex/{course}/update', [CourseController::class, 'update'])->name('course.update');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
